@@ -32,7 +32,13 @@ $(function(){
                             <td>${producto.Nombre_categoria}</td>
                             <td>
                                 <button class=" product-Delete btn btn-danger" id="${producto.id_producto}">
-                                    DELETE
+                                   <i class="fas fa-trash"></i>
+                                    
+                                </button>
+                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn btn-warning" id="${producto.id_producto}">
+                                    
+                                    <i class="fas fa-pen"></i>
+
                                 </button>
                             </td>
                         </tr>
@@ -124,9 +130,19 @@ $(function(){
                             <td>${producto.Nombre_categoria}</td>
                             <td>
                                 <button class=" product-Delete btn btn-danger" id="${producto.id_producto}">
-                                    DELETE
+                                    
+                                    <i class="fas fa-trash"></i>
+
                                 </button>
+
+                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn btn-warning" id="${producto.id_producto}">
+                                    
+                                    <i class="fas fa-pen"></i>
+
+                                </button>
+                                
                             </td>
+                            
                         </tr>
                     `
                 });

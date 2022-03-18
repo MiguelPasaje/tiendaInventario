@@ -11,7 +11,6 @@
 <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="../assets/popper.min.js"></script>
 <script src="../assets/sweetalert2.js"></script>
-<script src="../assets/fontAwesome.js"></script>
 <script src="../index.js"></script>
 
 
