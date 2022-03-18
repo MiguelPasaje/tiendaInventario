@@ -62,8 +62,41 @@ $_SESSION['start'] = time();
                         <div class="form-group" >
                             <textarea name="descripcion" id="descripcion" rows="2" class="form-control" placeholder="Descripción producto"></textarea>
                         </div>
+
+                        <?php
+                            include_once '../bd/conexion.php';    
+                            $objeto = new Conexion();
+                            $conexion = $objeto->Conectar();
+
+                            $sql ="SELECT categoria.codigo_categoria, categoria.Nombre_categoria FROM categoria";
+                            $stmt =$conexion->prepare($sql);
+                            $stmt->execute();
+                            $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);//se convierte la consulta en un array
+                           /*  print_r($results[0]);
+                            echo("<br>");
+                            echo("<br>");
+                             */
+                            
+                           
+                        ?>
+                        
+                        
+                        
                         <div class="form-group">
-                            <input type="text" class="form-control" id="categoria" name="categoria"  placeholder="categoria" >
+                            
+                            <select name="categoria" id="categoria" class="form-control">
+                                <option value="">Seleccione la Categoría</option>
+                                <?php
+                                foreach ($results as $key => $categoria) {
+                                    
+                                    ?>
+                                        <option id="categoria" class="form-control" name="categoria" value="<?php echo ($categoria['codigo_categoria']); ?>"> <?php echo ($categoria['Nombre_categoria']) ; ?></option>
+                                    <?php
+                                }
+                                ?>
+    
+    
+                            </select>
                         </div>
                         <input type="submit" class="btn btn-primary btn-block" id="submit" name="submit"  value="Guardar">
                     </form>

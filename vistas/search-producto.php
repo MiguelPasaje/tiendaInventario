@@ -7,7 +7,7 @@
     $search = $_POST['search'];
 
     if (!empty($search)){
-        $sql2 = "SELECT * FROM producto WHERE Nombre_producto LIKE '%$search%' ";
+        //$sql2 = "SELECT * FROM producto WHERE Nombre_producto LIKE '%$search%' ";
         $sql = "SELECT producto.id_producto, producto.codigo_Barras_producto ,producto.Nombre_producto, producto.precio_compra , producto.precio_Venta , producto.descripcion ,categoria.Nombre_categoria FROM producto join categoria on producto.cod_categoria_fk = categoria.codigo_categoria WHERE Nombre_producto LIKE '%$search%'";
         $stmt  = $conexion->prepare($sql);
         $stmt->execute();
