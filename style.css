@@ -1,0 +1,64 @@
+*{
+    color:aliceblue;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300
+
+}
+body{
+    background-color:rgb(32, 35, 38);
+    margin:0;
+}
+h3{
+    color:aqua;
+}
+
+#login .container #login-row #login-column #login-box{
+    margin:70px;
+    max-width:600px;
+    height: 300px;
+    box-shadow: 2px 2px 2px rgb(243, 243, 243); 
+    border-radius: 3px;
+}
+/* .container{
+    background: rgb(90, 90, 90);
+} */
+
+/* search producto */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+
+.height {
+    height: 20vh
+}
+
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1)
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 3px solid #00fffd
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    color:black;
+}
+
+thead td{
+    text-align: center;
+    color: aqua;
+    font-weight: bold;
+}
+
+/* end search producto */
