@@ -25,7 +25,7 @@ $(function(){
                     <tr product-id="${producto.id_producto}">
                             <td >${producto.id_producto}</td>
                             <td>${producto.codigo_Barras_producto}</td>
-                            <td><a href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
+                            <td><a data-toggle="modal" data-target="#exampleModal" href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
                             <td>${producto.precio_compra}</td>
                             <td>${producto.precio_Venta}</td>
                             <td>${producto.descripcion}</td>
@@ -88,6 +88,7 @@ $(function(){
                 });
                 $('#producto-form').trigger('reset');
                 listarProductos();
+                editar = false;
             }
             else{
                 Swal.fire({
@@ -116,7 +117,7 @@ $(function(){
                         <tr product-id="${producto.id_producto}">
                             <td >${producto.id_producto}</td>
                             <td>${producto.codigo_Barras_producto}</td>
-                            <td><a href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
+                            <td><a data-toggle="modal" data-target="#exampleModal" href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
                             <td>${producto.precio_compra}</td>
                             <td>${producto.precio_Venta}</td>
                             <td>${producto.descripcion}</td>
@@ -196,6 +197,12 @@ $(function(){
 
     });
 
+    $('#cerrar_form').click(function(){
+        $('#producto-form').trigger('reset');
+        $('#id_producto').val('');
+        editar = false;
+
+    });
     
 
 

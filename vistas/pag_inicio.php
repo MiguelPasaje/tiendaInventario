@@ -26,131 +26,158 @@ $_SESSION['start'] = time();
                     <p class="lead text-center">
                         sesion iniciada
                     </p>
-                    <hr class="my-4">
-                    <a class="btn btn-danger btn-lg" href="../login/logout.php" roles="button">Cerrar sesión</a>
+                    <hr class="my-4 bg-primary">
                 </div>
             </div>
         </div>
     </div>
-    <hr>
 
+    <!--  modal -->
 
-    <div class="container p-4">
-
-        <div class="container">
-
-            <div class="col-md-8">
-
-                <div class="card card-body bg-dark">
-                    <form action="" method="POST" id="producto-form" >
-                        <div class="form-group">
-                            <input type="hidden" id="id_producto">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="CodigoBarras" name="CodigoBarras"  placeholder="Codigo de Barras" autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="NameProducto" name="NameProducto"  placeholder="nombre Producto" >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="precioCompra" name="precioCompra"  placeholder="Precio de Compra" >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="precioVenta" name="precioVenta"  placeholder="precio de venta" >
-                        </div>
-                        <div class="form-group" >
-                            <textarea name="descripcion" id="descripcion" rows="2" class="form-control" placeholder="Descripción producto"></textarea>
-                        </div>
-
-                        <?php
-                            include_once '../bd/conexion.php';    
-                            $objeto = new Conexion();
-                            $conexion = $objeto->Conectar();
-
-                            $sql ="SELECT categoria.codigo_categoria, categoria.Nombre_categoria FROM categoria";
-                            $stmt =$conexion->prepare($sql);
-                            $stmt->execute();
-                            $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);//se convierte la consulta en un array
-                           /*  print_r($results[0]);
-                            echo("<br>");
-                            echo("<br>");
-                             */
-                            
-                           
-                        ?>
-                        
-                        
-                        
-                        <div class="form-group">
-                            
-                            <select name="categoria" id="categoria" class="form-control">
-                                <option value="">Seleccione la Categoría</option>
-                                <?php
-                                foreach ($results as $key => $categoria) {
-                                    
-                                    ?>
-                                        <option id="categoria" class="form-control" name="categoria" value="<?php echo ($categoria['codigo_categoria']); ?>"> <?php echo ($categoria['Nombre_categoria']) ; ?></option>
-                                    <?php
-                                }
-                                ?>
-    
-    
-                            </select>
-                        </div>
-                        <input type="submit" class="btn btn-primary btn-block" id="submit" name="submit"  value="Guardar">
-                    </form>
-                </div>
-
-            </div>
-
-            <div class="col-md-12">
-                <div class="card my-4  card-body bg-dark" id="product-result">
-                    <div class="card-body">
-                        
-
-                            <table class="table table-bordered table-sm">
-                                <thead>
-                                    <tr>
-                                        <td>id</td>
-                                        <td>Codigo Barras</td>
-                                        <td>Nombre</td>
-                                        <td>Precio Compra</td>
-                                        <td>Precio Venta</td>
-                                        <td>Descripción</td>
-                                        <td>Categoria</td>
-                                        <td>Opciones</td>
-            
-                                    </tr>
-                                </thead>
-                                <tbody id="Productos_search"></tbody>
-                            </table>    
-
-                        
+    <div class="container">
+        <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Añadir nuevo Producto
+    </button>
+  
+  <!-- Modal -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bg-dark ">
+      <div class="modal-content bg-dark">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-primary " id="exampleModalLabel">Nuevo Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-dark">
+            ...
+            <div class="card card-body bg-dark">
+                <form action="" method="POST" id="producto-form" >
+                    <div class="form-group">
+                        <input type="hidden" id="id_producto">
                     </div>
-                </div>
-                <table class="table table-bordered table-sm">
-                    <thead>
-                        <tr>
-                            <td>id</td>
-                            <td>Codigo Barras</td>
-                            <td>Nombre</td>
-                            <td>Precio Compra</td>
-                            <td>Precio Venta</td>
-                            <td>Descripción</td>
-                            <td>Categoria</td>
-                            <td>Opciones</td>
 
-                        </tr>
-                    </thead>
-                    <tbody id="tb_Productos"></tbody>
-                </table>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="CodigoBarras" name="CodigoBarras"  placeholder="Codigo de Barras" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="NameProducto" name="NameProducto"  placeholder="nombre Producto" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="precioCompra" name="precioCompra"  placeholder="Precio de Compra" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="precioVenta" name="precioVenta"  placeholder="precio de venta" >
+                    </div>
+                    <div class="form-group" >
+                        <textarea name="descripcion" id="descripcion" rows="2" class="form-control" placeholder="Descripción producto"></textarea>
+                    </div>
 
+                    <?php
+                        include_once '../bd/conexion.php';    
+                        $objeto = new Conexion();
+                        $conexion = $objeto->Conectar();
+
+                        $sql ="SELECT categoria.codigo_categoria, categoria.Nombre_categoria FROM categoria";
+                        $stmt =$conexion->prepare($sql);
+                        $stmt->execute();
+                        $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);//se convierte la consulta en un array
+                       /*  print_r($results[0]);
+                        echo("<br>");
+                        echo("<br>");
+                         */
+                        
+                       
+                    ?>
+                    
+                    
+                    
+                    <div class="form-group">
+                        
+                        <select name="categoria" id="categoria" class="form-control">
+                            <option value="">Seleccione la Categoría</option>
+                            <?php
+                            foreach ($results as $key => $categoria) {
+                                
+                                ?>
+                                    <option id="categoria" class="form-control" name="categoria" value="<?php echo ($categoria['codigo_categoria']); ?>"> <?php echo ($categoria['Nombre_categoria']) ; ?></option>
+                                <?php
+                            }
+                            ?>
+
+
+                        </select>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" id="submit" name="submit"  value="Guardar">
+                </form>
             </div>
-
+            ...
         </div>
+        <div class="modal-footer ">
+          <button type="button" id="cerrar_form" class="btn btn-warning btn-block" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     </div>
+
+    
+
+    <!-- end modal -->
+        
+
+
+    
+<div class="container p-4">
+    <div class="table-responsive">
+        <div class="" id="product-result">
+    
+                    <table class="table table-bordered table-sm  table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>Codigo Barras</td>
+                                <td>Nombre</td>
+                                <td>Precio Compra</td>
+                                <td>Precio Venta</td>
+                                <td>Descripción</td>
+                                <td>Categoria</td>
+                                <td>Opciones</td>
+    
+                            </tr>
+                        </thead>
+                        <tbody id="Productos_search"></tbody>
+                    </table>    
+    
+                
+        </div>
+        <table class="table table-bordered table-sm table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>Codigo Barras</td>
+                    <td>Nombre</td>
+                    <td>Precio Compra</td>
+                    <td>Precio Venta</td>
+                    <td>Descripción</td>
+                    <td>Categoria</td>
+                    <td>Opciones</td>
+    
+                </tr>
+            </thead>
+            <tbody id="tb_Productos"></tbody>
+        </table>
+    
+    </div>
+</div>
+        
+
+
+        
+
+    
 
     
     <?php include_once '../includes/footer.php';?>

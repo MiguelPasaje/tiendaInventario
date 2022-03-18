@@ -24,9 +24,10 @@
             <h2 class="text-center ">usuario:
                 <span class="badge badge-primary">
                     <?php
-                        echo $_SESSION["S_usuario"];
+                        echo $_SESSION["S_usuario"]; 
                     ?>
                 </span>
+                <a class="btn btn-danger btn-lg" href="../login/logout.php" roles="button">Cerrar sesión</a>
             </h2>
         </div>
     </ul>
