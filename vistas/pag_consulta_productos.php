@@ -14,7 +14,7 @@
 
 </head>
 <body>
-
+    
     
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a href="pag_inicio.php" class="navbar-brand">TiendaElSarcoDelMecato</a>    
@@ -34,7 +34,7 @@
     </div>
 
     <div class="col-md-12">
-        <div class="" id="product-result">
+        <div class="table-responsive" id="product-result">
             <div class="card-body">
                 
 

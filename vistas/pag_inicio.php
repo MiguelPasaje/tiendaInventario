@@ -126,6 +126,21 @@ $_SESSION['start'] = time();
     
 
     <!-- end modal -->
+
+    <!---->
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="search">
+                     <i class="fa fa-search"></i> 
+                     
+                        <input type="search" id="search" class="form-control mr-5" placeholder="Busca tu producto">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+
         
 
 

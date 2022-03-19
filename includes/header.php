@@ -20,14 +20,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="pag_inicio.php" class="navbar-brand">TiendaElSarcoDelMecato</a>
         <ul class="navbar-nav ml-auto">
-            <form action="" class="form-inline my-2 my-lg-0">
-                <input type="search" id="search" class="form-control mr-5" placeholder="Busca tu producto">
-            </form>
             <div class="container">
                 <h2 class="text-center ">usuario:
-                <span class="badge badge-primary">
-                    <i class="fas fa-user"></i>
-                    <?php
+                    <span class="badge badge-primary">
+                        <i class="fas fa-user"></i>
+                        <?php
                         echo $_SESSION["S_usuario"]; 
                         ?>
                 </span>
@@ -37,4 +34,7 @@
         </div>
     </ul>
 </nav>
-<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+
+                        
+
+                        

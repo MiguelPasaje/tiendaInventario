@@ -9,7 +9,7 @@ $(function(){
     $('#search').keyup(function(){
         if($('#search').val()){
             let search = $('#search').val();
-        console.log(search);
+            console.log(search);
 
         $.ajax({
             url: 'search-producto.php',
@@ -37,7 +37,7 @@ $(function(){
                                 </button>
                                 <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn btn-warning" id="${producto.id_producto}">
                                     
-                                    <i class="fas fa-pen"></i>
+                                <i class="fa">&#xf044;</i>
 
                                 </button>
                             </td>

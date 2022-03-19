@@ -62,3 +62,8 @@ thead td{
 }
 
 /* end search producto */
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+    color: black !important;
+}
