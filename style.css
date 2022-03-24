@@ -1,10 +1,8 @@
 *{
     color:aliceblue;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
     box-sizing: border-box;
-
-
 }
 body{
     background-color:rgb(32, 35, 38);
@@ -110,10 +108,84 @@ thead td{
 
 /* end btn-Add */
 
+/* celda opciones */
 .contOpc{    
     text-align: center;
     min-width:110px;
 }
 .contOpc button{
     margin: 2px;
+}
+/* end celda opciones */
+
+/* btn Cerrar sesión */
+
+.btn-logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-logout i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+}
+
+
+.btn-logout::after{
+    content:" Cerrar sesión ";
+}
+.title-user::before{
+    content:"usuario:";
+}
+
+@media only screen and (max-width: 800px) {
+    .btn-logout::after{
+        content:" ";
+    }
+    .title-user::before{
+        content:" ";
+    }
+    .btn-logout {        
+        border-radius: 50%;                
+        margin: 5px;
+        padding: 5px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;                      
+    }
+    .btn-logout i{
+        padding:  1px;
+    }
+    .navbar{
+        display: block;
+    }
+    nav a{
+        display: block;
+    }
+    
+}
+/* btn Cerrar sesión */
+
+nav a{
+    text-align: center;    
+    padding: 5px 1em;
+    font-size: 25px;
+
+
+
+}
+nav a:hover{
+    background: #202326;   
+    border-radius: 20px;
+}
+.btns-nav{
+    display:flex;
+}
+.btns-nav a{
+    flex-direction: row;
+    font-size: 1.8em;
+    color: rgb(255, 255, 255);
 }

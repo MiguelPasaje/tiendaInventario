@@ -19,17 +19,11 @@ $_SESSION['start'] = time();
 
    
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="junbotrom">
+        
                     
-                    <p class="lead text-center">
-                        sesion iniciada
-                    </p>
-                    <hr class="my-4 bg-primary">
-                </div>
-            </div>
-        </div>
+
+                    <hr class="my-4 bg-info">
+           
     </div>
 
     <!--  modal -->

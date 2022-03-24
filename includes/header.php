@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,23 +17,33 @@
 <body>
     
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="pag_inicio.php" class="navbar-brand">TiendaElSarcoDelMecato</a>
-        <ul class="navbar-nav ml-auto">
-            <div class="container">
-                <h2 class="text-center ">usuario:
-                    <span class="badge badge-primary">
+    <nav class="navbar  navbar-dark bg-dark">
+        <a href="pag_inicio.php" class="text-light">ElSarcoDelMecato</a>
+        <ul class="navbar-nav">
+            <div class="container content-user" >
+                <h2 class="text-center title-user ">
+                    <span class="badge">
                         <i class="fas fa-user"></i>
-                        <?php
-                        echo $_SESSION["S_usuario"]; 
-                        ?>
-                </span>
+                            <?php
+                            echo $_SESSION["S_usuario"]; 
+                            ?>
+                        </i>                     
+                    </span>
+                </h2>
                 
-                <a class="btn btn-danger btn-lg" href="../login/logout.php" roles="button">Cerrar sesión</a>
-            </h2>
-        </div>
-    </ul>
-</nav>
+                <div class="btns-nav">
+                    <a class="" href="../vistas/pag_consulta_productos.php" roles="button">
+                        lista
+                    </a>
+                    <a class="btn btn-danger btn-lg btn-logout" href="../login/logout.php" roles="button">
+                        <i class="fa icon-logout">
+                            &#xf2f5;
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </ul>
+    </nav>
 
                         
 
