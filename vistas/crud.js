@@ -24,20 +24,20 @@ $(function(){
                     template += `
                     <tr product-id="${producto.id_producto}">
                             <td >${producto.id_producto}</td>
-                            <td>${producto.codigo_Barras_producto}</td>
                             <td><a data-toggle="modal" data-target="#exampleModal" href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
                             <td>${producto.precio_compra}</td>
                             <td>${producto.precio_Venta}</td>
-                            <td>${producto.descripcion}</td>
                             <td>${producto.Nombre_categoria}</td>
-                            <td>
+                            <td>${producto.descripcion}</td>
+                            <td>${producto.codigo_Barras_producto}</td>
+                            <td class="contOpc">
                                 <button class=" product-Delete btn btn-danger" id="${producto.id_producto}">
                                    <i class="fas fa-trash"></i>
                                     
                                 </button>
-                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn btn-warning" id="${producto.id_producto}">
+                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn bg-info" id="${producto.id_producto}">
                                     
-                                <i class="fa">&#xf044;</i>
+                                <i class="fas fa-pen"></i>
 
                                 </button>
                             </td>
@@ -121,21 +121,21 @@ $(function(){
                 productos.forEach(producto =>{
                     template += `
                         <tr product-id="${producto.id_producto}">
-                            <td >${producto.id_producto}</td>
-                            <td>${producto.codigo_Barras_producto}</td>
+                            <td >${producto.id_producto}</td>                            
                             <td><a data-toggle="modal" data-target="#exampleModal" href="#" class="producto_item" id="${producto.id_producto}">${producto.Nombre_producto}</a></td>
                             <td>${producto.precio_compra}</td>
                             <td>${producto.precio_Venta}</td>
-                            <td>${producto.descripcion}</td>
                             <td>${producto.Nombre_categoria}</td>
-                            <td>
+                            <td>${producto.descripcion}</td>
+                            <td>${producto.codigo_Barras_producto}</td>
+                            <td class="contOpc">
                                 <button class=" product-Delete btn btn-danger" id="${producto.id_producto}">
                                     
                                     <i class="fas fa-trash"></i>
 
                                 </button>
 
-                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn btn-warning" id="${producto.id_producto}">
+                                <button  data-toggle="modal" data-target="#exampleModal" class="producto_item product-edit btn bg-info" id="${producto.id_producto}">
                                     
                                     <i class="fas fa-pen"></i>
 
@@ -218,6 +218,14 @@ $(function(){
         $('#id_producto').val('');
         editar = false;
 
+    });
+    
+    $(document).on('keydown',function(e){
+        if(e.key == "Escape"){
+            $('#producto-form').trigger('reset');
+            $('#id_producto').val('');
+            editar = false;
+        }
     });
     
 

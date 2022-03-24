@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div id="login">
+    <div id="login" class="container">
         <h3 class="text-center display-4">Login</h3>
         <div class="container">
             <div id=login-row class="row justify-content-center align-items-center">

@@ -33,12 +33,12 @@ $_SESSION['start'] = time();
     </div>
 
     <!--  modal -->
+    <button type="button" class="btn btn-primary btn-Add" data-toggle="modal" data-target="#exampleModal">
+        
+    </button>
 
     <div class="container">
         <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Añadir nuevo Producto
-    </button>
   
   <!-- Modal -->
   <div class="modal fade " id="exampleModal" tabindex="-1" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -153,12 +153,12 @@ $_SESSION['start'] = time();
                         <thead>
                             <tr>
                                 <td>id</td>
-                                <td>Codigo Barras</td>
                                 <td>Nombre</td>
                                 <td>Precio Compra</td>
                                 <td>Precio Venta</td>
-                                <td>Descripción</td>
                                 <td>Categoria</td>
+                                <td>Descripción</td>
+                                <td>Codigo Barras</td>
                                 <td>Opciones</td>
     
                             </tr>
@@ -172,12 +172,12 @@ $_SESSION['start'] = time();
             <thead>
                 <tr>
                     <td>id</td>
-                    <td>Codigo Barras</td>
                     <td>Nombre</td>
                     <td>Precio Compra</td>
                     <td>Precio Venta</td>
-                    <td>Descripción</td>
                     <td>Categoria</td>
+                    <td>Descripción</td>
+                    <td>Codigo Barras</td>
                     <td>Opciones</td>
     
                 </tr>

@@ -1,7 +1,9 @@
 *{
     color:aliceblue;
     font-family: "Poppins", sans-serif;
-    font-weight: 300
+    font-weight: 300;
+    box-sizing: border-box;
+
 
 }
 body{
@@ -13,11 +15,19 @@ h3{
 }
 
 #login .container #login-row #login-column #login-box{
-    margin:70px;
+    margin-top:70px;
     max-width:600px;
     height: 300px;
-    box-shadow: 2px 2px 2px rgb(243, 243, 243); 
+    box-shadow: 1px 1px 0.4em #fcfcfc, 1px 1px 0.5em #02fcef;
     border-radius: 3px;
+}
+a{
+    text-decoration:none;
+    color:#17a2b8;
+}
+a:hover{
+    text-decoration:none;
+    color:#19c4df;
 }
 /* .container{
     background: rgb(90, 90, 90);
@@ -45,7 +55,7 @@ h3{
 
 .search input:focus {
     box-shadow: none;
-    border: 3px solid #00fffd
+    border: 3px solid #17a2b8
 }
 
 .search .fa-search {
@@ -57,7 +67,7 @@ h3{
 
 thead td{
     text-align: center;
-    color: aqua;
+    color: #17a2b8;
     font-weight: bold;
 }
 
@@ -66,4 +76,44 @@ thead td{
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
     color: black !important;
+}
+
+/* btn-Add */
+
+.btn-Add{    
+    position: fixed;
+    right: 30px;
+    bottom:50%;
+    box-shadow: 1px 1px 0.4em #c3c3c3, 1px 1px 0.5em #007bff;
+}
+.btn-Add::before{
+    content: "Añadir nuevo Producto";
+}
+@media only screen and (max-width: 1550px) {
+    .btn-Add{
+        bottom:10%;
+        border-radius: 50%;
+        padding: 10px 25px;
+        margin: 1px;
+        font-size: 30px;
+        font-weight:bold;
+    }
+    .btn-Add::before{
+        content:" ";
+    }
+    .btn-Add:after{
+        position: relative;
+        content: " + ";
+        z-index: 1 !important;
+    }
+}
+
+/* end btn-Add */
+
+.contOpc{    
+    text-align: center;
+    min-width:110px;
+}
+.contOpc button{
+    margin: 2px;
 }
