@@ -3,6 +3,9 @@
     <div class="copyright">
         <p>MiguelPasaje</p>
     </div>
+    <div>
+        <a href="#">descarga apk <span>(acseso directo a la pagina)</span> </a>
+    </div>
 
 </footer>
 

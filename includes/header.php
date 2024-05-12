@@ -32,8 +32,8 @@
                 </h2>
                 
                 <div class="btns-nav">
-                    <a class="" href="../vistas/pag_consulta_productos.php" roles="button">
-                        lista
+                    <a class="btn-lista" href="../vistas/pag_consulta_productos.php" roles="button">
+                        Lista
                     </a>
                     <a class="btn btn-danger btn-lg btn-logout" href="../login/logout.php" roles="button">
                         <i class="fa icon-logout">

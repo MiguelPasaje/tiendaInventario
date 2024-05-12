@@ -24,7 +24,7 @@ a{
     color:#17a2b8;
 }
 a:hover{
-    text-decoration:none;
+    text-decoration:underline;
     color:#19c4df;
 }
 /* .container{
@@ -80,7 +80,7 @@ thead td{
 
 .btn-Add{    
     position: fixed;
-    right: 30px;
+    right: 40px;
     bottom:50%;
     box-shadow: 1px 1px 0.4em #c3c3c3, 1px 1px 0.5em #007bff;
 }
@@ -120,13 +120,20 @@ thead td{
 
 /* btn Cerrar sesión */
 
-.btn-logout{
+.btn-logout, .btn-lista{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px 0px #486e74;
+    margin-right: 5px;
+
+}
+.btn-lista{
+    background:#3e444a;
 }
 
-.btn-logout i{
+.btn-logout i {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +147,24 @@ thead td{
 .title-user::before{
     content:"usuario:";
 }
-
+nav a{
+    text-align: center;    
+    padding: 5px 1em;
+    font-size: 25px;
+}
+nav a:hover{
+    background: #17a2b8;   
+    color: #fff;
+    border-radius: 20px;
+}
+.btns-nav{
+    display:flex;
+}
+.btns-nav a{
+    flex-direction: row;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+}
 @media only screen and (max-width: 800px) {
     .btn-logout::after{
         content:" ";
@@ -156,6 +180,9 @@ thead td{
         -moz-border-radius: 50px;
         border-radius: 50px;                      
     }
+    .btns-nav a{
+        font-size: 1.8em;
+    }
     .btn-logout i{
         padding:  1px;
     }
@@ -167,25 +194,14 @@ thead td{
     }
     
 }
-/* btn Cerrar sesión */
-
-nav a{
-    text-align: center;    
-    padding: 5px 1em;
-    font-size: 25px;
 
 
+/* end btn Cerrar sesión */
 
+/* footer */
+
+footer{
+    background: #202326;
 }
-nav a:hover{
-    background: #202326;   
-    border-radius: 20px;
-}
-.btns-nav{
-    display:flex;
-}
-.btns-nav a{
-    flex-direction: row;
-    font-size: 1.8em;
-    color: rgb(255, 255, 255);
-}
+
+/* end footer */
